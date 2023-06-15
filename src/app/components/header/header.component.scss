@@ -1,0 +1,30 @@
+@import "./../../../variables.scss";
+
+.side-nav {
+  height: 100vh;
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 9;
+  transition: width 0.5s ease;
+  white-space: nowrap;
+  &.active {
+    width: 75%;
+  }
+}
+
+.menu,
+.logo-wrapper img {
+  &:hover {
+    cursor: pointer;
+  }
+}
+.nav,
+.side-nav {
+  li {
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+}

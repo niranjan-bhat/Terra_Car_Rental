@@ -1,0 +1,17 @@
+$primary: #ffa633;
+$secondary: #201f1d;
+
+$small-screen-width: 425px;
+$medium-screen-width: 768px;
+$large-screen-width: 1200px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $small-screen-width,
+  md: $medium-screen-width,
+  lg: $large-screen-width,
+  xl: 1100px,
+  xxl: 1400px,
+);
+
+$header-height: 5rem;

@@ -46,6 +46,19 @@ export class CarGeneratorService {
   doors = [2, 4, 5];
   persons = [2, 4, 6, 7];
   enginePowers = [100, 150, 200, 250, 300];
+  ratings = [3, 4, 5];
+  germanCities = [
+    "Berlin",
+    "Hamburg",
+    "Munich",
+    "Cologne",
+    "Frankfurt",
+    "Stuttgart",
+    "Düsseldorf",
+    "Dortmund",
+    "Essen",
+    "Leipzig"
+  ];
   imageSrcs = [
     '../../../assets/images/car-01.jpg',
     '../../../assets/images/car-02.jpg',
@@ -56,9 +69,10 @@ export class CarGeneratorService {
     '../../../assets/images/car-07.jpg',
     '../../../assets/images/car-09.jpg',
   ];
-  constructor() {}
+  constructor() { }
 
   getPopularCars(): CarEntry[] {
+    this.carEntries = [];
     for (let i = 0; i < 6; i++) {
       const carEntry: CarEntry = this.generateCarEntry(true);
       this.carEntries.push(carEntry);
@@ -89,6 +103,8 @@ export class CarGeneratorService {
       engine_power: this.getRandomValueFromArray(this.enginePowers),
       img: this.getuniqueImage(),
       persons: this.getRandomValueFromArray(this.persons),
+      rating: this.getRandomValueFromArray(this.ratings),
+      city: this.getRandomValueFromArray(this.germanCities)
     };
 
     return carEntry;

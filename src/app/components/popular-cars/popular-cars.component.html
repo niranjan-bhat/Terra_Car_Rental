@@ -17,7 +17,7 @@
         <div class="row" *ngFor="let car of allCars">
             <app-car-overview [model_name]="car.model_name" [price]="car.price" [year]="car.year" [body]="car.body"
                 [fuel]="car.fuel" [transmission]="car.transmission" [milage]="car.mileage" [persons]="car.persons"
-                [img]="car.img"></app-car-overview>
+                [img]="car.img" [rating]="car.rating" [city]="car.city"></app-car-overview>
         </div>
     </div>
 </section>

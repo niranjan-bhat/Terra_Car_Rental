@@ -13,4 +13,6 @@ export interface CarEntry {
   engine_power: number;
   img: string;
   persons: number;
+  rating:number;
+  city:string;
 }

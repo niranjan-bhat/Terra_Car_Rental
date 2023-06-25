@@ -15,10 +15,13 @@ import { RecommendationComponent } from './components/recommendation/recommendat
 import { PackagePricingComponent } from './components/package-pricing/package-pricing.component';
 import { SearchBannerComponent } from './components/search-banner/search-banner.component';
 import { CarOverviewComponent } from './components/car-overview/car-overview.component';
+import { CarListingComponent } from './components/car-listing/car-listing.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { StarRatingModule } from 'angular-star-rating';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, HeroComponent, HowItWorksComponent, PopularCarsComponent, PopularCarTypesComponent, FactsComponent, RecommendationComponent, PackagePricingComponent, SearchBannerComponent, CarOverviewComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, HeroComponent, HowItWorksComponent, PopularCarsComponent, PopularCarTypesComponent, FactsComponent, RecommendationComponent, PackagePricingComponent, SearchBannerComponent, CarOverviewComponent, CarListingComponent, PageNotFoundComponent],
+  imports: [BrowserModule, AppRoutingModule, StarRatingModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })

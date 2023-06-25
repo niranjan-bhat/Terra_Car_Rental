@@ -3,15 +3,21 @@ $secondary: #201f1d;
 
 $small-screen-width: 425px;
 $medium-screen-width: 768px;
-$large-screen-width: 1200px;
+$large-screen-width: 990px;
+$extra-large-screen-width: 1200px;
+$double-extra-large-screen-width: 1400px;
+
+
+
+$header-height: 5rem;
+$breadcrumb-divider-color: red;
+
 
 $grid-breakpoints: (
   xs: 0,
   sm: $small-screen-width,
   md: $medium-screen-width,
   lg: $large-screen-width,
-  xl: 1100px,
-  xxl: 1400px,
+  xl: $extra-large-screen-width,
+  xxl: $double-extra-large-screen-width
 );
-
-$header-height: 5rem;

@@ -18,5 +18,7 @@ export class CarOverviewComponent {
   @Input() make: string | undefined;
   @Input() enginePower: string | undefined;
   @Input() img: string | undefined;
+  @Input() city: string | undefined;
   @Input() persons: number | undefined;
+  @Input() rating: number = 0;
 }

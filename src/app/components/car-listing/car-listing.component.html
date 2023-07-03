@@ -149,7 +149,7 @@
   <div class="col-lg-8 col-xl-9 fluid-container">
     <div class="car-list">
      <div class="row row-gap-3">
-      <div class="col-lg-12  col-xl-6" *ngFor="let car of allCars">
+      <div class="col-md-6  col-xl-6 p-0" *ngFor="let car of allCars">
         <app-car-overview [model_name]="car.model_name" [price]="car.price" [year]="car.year" [body]="car.body"
           [fuel]="car.fuel" [transmission]="car.transmission" [milage]="car.mileage" [persons]="car.persons"
           [img]="car.img" [rating]="car.rating" [city]="car.city"></app-car-overview>

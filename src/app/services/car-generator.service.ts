@@ -7,7 +7,7 @@ import { CarEntry } from '../car-entry.model';
 export class CarGeneratorService {
   carEntries: CarEntry[] = [];
   imageIndex = 0;
-  modelNames = [
+  private modelNames = [
     'Corolla',
     'Civic',
     'Mustang',
@@ -24,7 +24,7 @@ export class CarGeneratorService {
     'Optima',
     'A4',
   ];
-  makes = [
+  private makes = [
     'Toyota',
     'Honda',
     'Ford',
@@ -36,18 +36,18 @@ export class CarGeneratorService {
     'Kia',
     'Audi',
   ];
-  fuels = ['Petrol', 'Diesel', 'Electric', 'Hybrid'];
-  transmissions = ['Automatic', 'Manual'];
-  colors = ['Red', 'Blue', 'Silver', 'White', 'Black'];
-  years = Array.from({ length: 13 }, (_, i) => 2010 + i);
-  prices = [65, 41, 67, 50, 100];
-  bodyTypes = ['Sedan', 'Hatchback', 'SUV', 'Crossover', 'Convertible'];
-  mileages = Array.from({ length: 19 }, (_, i) => 10 + i * 5);
-  doors = [2, 4, 5];
-  persons = [2, 4, 6, 7];
-  enginePowers = [100, 150, 200, 250, 300];
-  ratings = [3, 4, 5];
-  germanCities = [
+  private fuels = ['Petrol', 'Diesel', 'Electric', 'Hybrid'];
+  private transmissions = ['Automatic', 'Manual'];
+  private colors = ['Red', 'Blue', 'Silver', 'White', 'Black'];
+  private years = Array.from({ length: 13 }, (_, i) => 2010 + i);
+  private prices = [65, 41, 67, 50, 100];
+  private bodyTypes = ['Sedan', 'Hatchback', 'SUV', 'Crossover', 'Convertible'];
+  private mileages = Array.from({ length: 19 }, (_, i) => 10 + i * 5);
+  private doors = [2, 4, 5];
+  private persons = [2, 4, 6, 7];
+  private enginePowers = [100, 150, 200, 250, 300];
+  private ratings = [3, 4, 5];
+  private germanCities = [
     "Berlin",
     "Hamburg",
     "Munich",
@@ -59,7 +59,24 @@ export class CarGeneratorService {
     "Essen",
     "Leipzig"
   ];
-  imageSrcs = [
+  private addresses: string[] = [
+    'Alexanderplatz 1, 10178 Berlin',
+    'Schlossplatz 5, 70173 Stuttgart',
+    'Königsallee 11, 40212 Düsseldorf',
+    'Brandenburger Straße 2, 14467 Potsdam',
+    'Mönckebergstraße 1, 20095 Hamburg',
+    'Kurfürstendamm 25, 10719 Berlin',
+    'Maximilianstraße 17, 80539 Munich',
+    'Altstadt 6, 60311 Frankfurt',
+    'Friedrichstraße 101, 10117 Berlin',
+    'Prinzipalmarkt 7, 48143 Münster',
+    'Domplatz 20, 39104 Magdeburg',
+    'Am Markt 9, 04109 Leipzig',
+    'Neue Straße 12, 79098 Freiburg',
+    'Hohenzollernring 16, 50672 Cologne',
+    'Theaterplatz 2, 01067 Dresden'
+  ];
+  private imageSrcs = [
     '../../../assets/images/car-01.jpg',
     '../../../assets/images/car-02.jpg',
     '../../../assets/images/car-03.jpg',
@@ -80,13 +97,16 @@ export class CarGeneratorService {
     return this.carEntries;
   }
   getAllCars(): CarEntry[] {
+    this.carEntries = [];
     for (let i = 0; i < 21; i++) {
       const carEntry: CarEntry = this.generateCarEntry(false);
       this.carEntries.push(carEntry);
     }
     return this.carEntries;
   }
-
+  getCarById(id: number) {
+    return this.generateCarEntry(true);
+  }
   private generateCarEntry(uniqueImage: boolean): CarEntry {
     const carEntry: CarEntry = {
       model_name: this.getRandomValueFromArray(this.modelNames),
@@ -104,7 +124,8 @@ export class CarGeneratorService {
       img: this.getuniqueImage(),
       persons: this.getRandomValueFromArray(this.persons),
       rating: this.getRandomValueFromArray(this.ratings),
-      city: this.getRandomValueFromArray(this.germanCities)
+      city: this.getRandomValueFromArray(this.germanCities),
+      address: this.getRandomValueFromArray(this.addresses)
     };
 
     return carEntry;

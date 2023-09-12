@@ -15,4 +15,5 @@ export interface CarEntry {
   persons: number;
   rating:number;
   city:string;
+  address:string;
 }

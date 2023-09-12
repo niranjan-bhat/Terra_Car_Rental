@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-overview',
@@ -21,4 +22,14 @@ export class CarOverviewComponent {
   @Input() city: string | undefined;
   @Input() persons: number | undefined;
   @Input() rating: number = 0;
+
+
+
+  constructor(private router: Router) {
+
+  }
+
+  navigate() {
+    this.router.navigate(["car/1/rent"]);
+  }
 }

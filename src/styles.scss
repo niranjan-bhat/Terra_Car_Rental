@@ -32,3 +32,27 @@ li {
 .text-grey {
   color: gray;
 }
+
+.btn-action{
+  background-color: #d0d0d0;
+  &:hover{
+    background-color: #387468;
+    color: white;
+  }
+}
+
+.card-heading{
+  border-bottom: #e4e0e0e2 solid 1px;
+
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(255, 191, 71);
+    width: 25px;
+    height: 5px;
+    border-radius: 2px;
+  }
+}
+

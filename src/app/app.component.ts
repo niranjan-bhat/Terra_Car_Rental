@@ -8,7 +8,7 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'TerraCars';
-
+  
   constructor(private router: Router) {}
 
   ngOnInit() {

@@ -18,11 +18,19 @@ import { CarOverviewComponent } from './components/car-overview/car-overview.com
 import { CarListingComponent } from './components/car-listing/car-listing.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StarRatingModule } from 'angular-star-rating';
+import { RentNowComponent } from './components/rent-now/rent-now.component';
+import { TostringPipe } from './tostring.pipe';
+import { CarCarouselComponent } from './components/car-carousel/car-carousel.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, HeroComponent, HowItWorksComponent, PopularCarsComponent, PopularCarTypesComponent, FactsComponent, RecommendationComponent, PackagePricingComponent, SearchBannerComponent, CarOverviewComponent, CarListingComponent, PageNotFoundComponent],
+  declarations: [AppComponent, HomeComponent,
+    HeaderComponent, FooterComponent, HeroComponent,
+    HowItWorksComponent, PopularCarsComponent, PopularCarTypesComponent,
+    FactsComponent, RecommendationComponent, PackagePricingComponent, SearchBannerComponent,
+    CarOverviewComponent, CarListingComponent, PageNotFoundComponent, RentNowComponent,
+    TostringPipe, CarCarouselComponent],
   imports: [BrowserModule, AppRoutingModule, StarRatingModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
